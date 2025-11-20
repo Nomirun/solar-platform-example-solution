@@ -41,7 +41,7 @@
     </None>
   </ItemGroup>
   <Target Name="RunDebugger" Condition="'$(Configuration)'=='Debug'" AfterTargets="Build">
-    <Exec Command="C:\Users\miha\.nomirun\nomirun.exe module debug --module-output $(MSBuildProjectDirectory)\$(OutputPath) --module-name SolarInverters --module-id a6642fd9-fb82-4a84-ad28-0e37d5b8f9c1 --host-framework $(TargetFramework)" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" ConsoleToMsBuild="true">
+    <Exec Command="nomirun module debug --module-output $(MSBuildProjectDirectory)\$(OutputPath) --module-name SolarInverters --module-id a6642fd9-fb82-4a84-ad28-0e37d5b8f9c1 --host-framework $(TargetFramework)" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" ConsoleToMsBuild="true">
       <Output TaskParameter="ConsoleOutput" PropertyName="Result" />
     </Exec>
   </Target>

@@ -1,6 +1,6 @@
 ﻿<Solution>
-  <Project Path="src\SolarInverters\SolarInverters.csproj" Type="Classic C#" />
-  <Project Path="src\Accounts\Accounts.csproj" Type="Classic C#" />
-  <Project Path="src\Reports\Reports.csproj" Type="Classic C#" />
-  <Project Path="src\SolarPlatformCommon\SolarPlatformCommon.csproj" Type="Classic C#" />
+  <Project Path="src\SolarInverters\SolarInverters.csproj" Type="C#" />
+  <Project Path="src\Accounts\Accounts.csproj" Type="C#" />
+  <Project Path="src\Reports\Reports.csproj" Type="C#" />
+  <Project Path="src\SolarPlatformCommon\SolarPlatformCommon.csproj" Type="C#" />
 </Solution>
