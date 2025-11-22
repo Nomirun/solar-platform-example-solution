@@ -21,7 +21,7 @@
   <ItemGroup>
     <PackageReference Include="Nomirun.Sdk" Version="1.0.133" />
     <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.31" />
-    <PackageReference Include="SolarPlatformCommon" Version="1.0.0" />
+    <PackageReference Include="SolarPlatformCommon" Version="1.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.0.1" />
     <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="4.3.0" />
     <PackageReference Include="Asp.Versioning.Abstractions" Version="8.1.0" />

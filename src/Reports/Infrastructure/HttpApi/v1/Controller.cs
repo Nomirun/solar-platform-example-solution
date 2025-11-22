@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Reports.Models;
 using SolarPlatformCommon.Requests;
 using SolarPlatformCommon.Responses;
-using Swashbuckle.AspNetCore.Annotations;
 
 namespace Reports.Infrastructure.HttpApi.v1;
 
