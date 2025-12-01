@@ -341,3 +341,4 @@ healthchecksdb
 build
 publish
 launchsettings.json
+nuget.config
