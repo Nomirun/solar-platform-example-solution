@@ -1,24 +1,21 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-              {
+       {
             "name": "SolarInverters",
             "type": "coreclr",
             "request": "launch",
             "program": "${userHome}/.nomirun/hosts/SolarInverters/debug/a6642fd9-fb82-4a84-ad28-0e37d5b8f9c1/Nomirun.Host.exe",
             "args": ["-d"]
         },
-              {
+        {
             "name": "Accounts",
             "type": "coreclr",
             "request": "launch",
             "program": "${userHome}/.nomirun/hosts/Accounts/debug/3f792d02-a68d-4fff-b979-81c95e6dccdf/Nomirun.Host.exe",
             "args": ["-d"]
         },
-                      {
+        {
             "name": "Reports",
             "type": "coreclr",
             "request": "launch",
