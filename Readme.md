@@ -15,7 +15,7 @@ Next you need to initialize Nomirun CLI: https://nomirun.com/docs/getting-starte
 
 Make sure you configure at least 1 NuGet repository. We recommend GitHub.
 
-Then go to `<user_profile>\.nomirun` folder and create these 2 files.
+Then go to `<user_profile>\.nomirun` folder and create these 3 files.
 
 ## 2.1. modules.yaml
 
@@ -23,32 +23,10 @@ Then go to `<user_profile>\.nomirun` folder and create these 2 files.
 modules:
 - name: SolarInverters
   csproj: SolarPlatform\src\SolarInverters\SolarInverters.csproj
-  hostPorts:
-    httpPort: 5310
-    httpsPort: 5311
-    grpcPort: 5312
-    grpcsPort: 5313
-    metricsHttpPort: 5314
-    metricsHttpsPort: 5315
 - name: Accounts
   csproj: SolarPlatform\src\Accounts\Accounts.csproj
-  hostPorts:
-    httpPort: 5320
-    httpsPort: 5321
-    grpcPort: 5322
-    grpcsPort: 5323
-    metricsHttpPort: 5324
-    metricsHttpsPort: 5325
 - name: Reports
   csproj: SolarPlatform\src\Reports\Reports.csproj
-  hostPorts:
-    httpPort: 5330
-    httpsPort: 5331
-    grpcPort: 5332
-    grpcsPort: 5333
-    metricsHttpPort: 5334
-    metricsHttpsPort: 5335
-
 ```
 
 ## 2.2. libraries.yaml
@@ -57,6 +35,167 @@ modules:
 libraries:
 - name: SolarPlatformCommon
   csproj: SolarPlatform\src\SolarPlatformCommon\SolarPlatformCommon.csproj
+```
+
+## 2.3. clusters.yaml
+
+```yaml
+clusters:
+- name: SolarInverters
+  hosts:
+  - name: SolarInverters
+    hostPath: \hosts\SolarInverters
+    hostFramework: net10.0
+    hostPlatform: win-x64
+    hostVersion: latest
+    hostPorts:
+      httpPort: 5310
+      httpsPort: 5311
+      grpcPort: 5312
+      grpcsPort: 5313
+      metricsHttpPort: 5314
+      metricsHttpsPort: 5315
+    modules:
+    - name: SolarInverters
+      version: 
+    extensions:
+    - name: Nomirun.Host.OpenTelemetry
+      version: 1.0.0
+      hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB43
+    configuration:
+      caching:
+        type: Memory
+        redisConnectionString: 
+      metrics:
+        enabled: true
+        username: 
+        password: 
+      swagger:
+        enabled: true
+        username: 
+        password: 
+      otel:
+        hostUrl: http://localhost:4317
+        protocol: 
+        headers: 
+      serilog:
+        using:
+        - Serilog.Sinks.Console
+        minimumLevel:
+          default: Information
+          override:
+            microsoft: Information
+            interceptorsHelper: Information
+      rateLimiting:
+        enabled: true
+        policies:
+        - endpoint: Global
+          limit: 250
+          periodInSeconds: 5
+- name: Accounts
+  hosts:
+  - name: Accounts
+    hostPath: \hosts\Accounts
+    hostFramework: net10.0
+    hostPlatform: win-x64
+    hostVersion: latest
+    hostPorts:
+      httpPort: 5320
+      httpsPort: 5321
+      grpcPort: 5322
+      grpcsPort: 5323
+      metricsHttpPort: 5324
+      metricsHttpsPort: 5325
+    modules:
+    - name: Accounts
+      version: 
+    extensions:
+    - name: Nomirun.Host.OpenTelemetry
+      version: 1.0.0
+      hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB43
+    configuration:
+      caching:
+        enabled: true
+        type: Memory
+        redisConnectionString: 
+      metrics:
+        enabled: true
+        username: 
+        password: 
+      swagger:
+        enabled: true
+        username: 
+        password: 
+      otel:
+        hostUrl: http://localhost:4317
+        protocol: 
+        headers: 
+      serilog:
+        using:
+        - Serilog.Sinks.Console
+        minimumLevel:
+          default: Information
+          override:
+            microsoft: Information
+            interceptorsHelper: Information
+      rateLimiting:
+        enabled: true
+        policies:
+        - endpoint: Global
+          limit: 250
+          periodInSeconds: 5
+- name: Reports
+  hosts:
+  - name: Reports
+    hostPath: \hosts\Reports
+    hostFramework: net10.0
+    hostPlatform: win-x64
+    hostVersion: latest
+    hostPorts:
+      httpPort: 5330
+      httpsPort: 5331
+      grpcPort: 5332
+      grpcsPort: 5333
+      metricsHttpPort: 5334
+      metricsHttpsPort: 5335
+    modules:
+    - name: Reports
+      version: 
+    extensions:
+    - name: Nomirun.Host.OpenTelemetry
+      version: 1.0.0
+      hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB43
+    configuration:
+      caching:
+        enabled: true
+        type: Memory
+        redisConnectionString: 
+      metrics:
+        enabled: true
+        username: 
+        password: 
+      swagger:
+        enabled: true
+        username:
+        password:
+      otel:
+        hostUrl: http://localhost:4317
+        protocol: 
+        headers: 
+      serilog:
+        using:
+        - Serilog.Sinks.Console
+        minimumLevel:
+          default: Information
+          override:
+            microsoft: Information
+            interceptorsHelper: Information
+      rateLimiting:
+        enabled: true
+        policies:
+        - endpoint: Global
+          limit: 250
+          periodInSeconds: 5
 ```
 
 Now you can open the solution in your IDE / code editor and build the code.
