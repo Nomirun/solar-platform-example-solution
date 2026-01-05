@@ -19,14 +19,13 @@
     <UserSecretsId>4accc851-86e8-43d5-8d7f-17ff1f932f5a</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Nomirun.Sdk" Version="1.0.133" />
-    <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.31" />
-    <PackageReference Include="SolarPlatformCommon" Version="1.0.2" />
-    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="10.0.1" />
-    <PackageReference Include="Microsoft.FeatureManagement.AspNetCore" Version="4.3.0" />
+
+      <PackageReference Include="Nomirun.Sdk" Version="1.0.139" />
+      <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.36" />
+    <PackageReference Include="SolarPlatformCommon" Version="1.0.12" />
     <PackageReference Include="Asp.Versioning.Abstractions" Version="8.1.0" />
-    <PackageReference Include="Asp.Versioning.Http" Version="8.1.0" />
-    <PackageReference Include="Google.Protobuf" Version="3.33.1" />
+    <PackageReference Include="Asp.Versioning.Http" Version="8.1.1" />
+    <PackageReference Include="Google.Protobuf" Version="3.33.2" />
     <PackageReference Include="Grpc.Tools" Version="2.76.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -41,7 +40,7 @@
     </None>
   </ItemGroup>
   <Target Name="RunDebugger" Condition="'$(Configuration)'=='Debug'" AfterTargets="Build">
-    <Exec Command="nomirun module debug --module-output $(MSBuildProjectDirectory)\$(OutputPath) --module-name SolarInverters --module-id a6642fd9-fb82-4a84-ad28-0e37d5b8f9c1 --host-framework $(TargetFramework)" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" ConsoleToMsBuild="true">
+    <Exec Command="nomirun module debug --module-output $(MSBuildProjectDirectory)\$(OutputPath) --module-name SolarInverters --module-id a6642fd9-fb82-4a84-ad28-0e37d5b8f9c1 --host-framework $(TargetFramework) -v false" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" ConsoleToMsBuild="true">
       <Output TaskParameter="ConsoleOutput" PropertyName="Result" />
     </Exec>
   </Target>

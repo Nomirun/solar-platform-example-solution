@@ -1,8 +1,5 @@
-using Accounts.Extensions;
 using Accounts.Infrastructure.Handlers;
-using Nomirun.Sdk.Abstractions;
 using Nomirun.Sdk.Abstractions.Interfaces;
-using Nomirun.Sdk.Infrastructure.HttpClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SolarPlatformCommon.Requests;
@@ -10,25 +7,13 @@ using SolarPlatformCommon.Responses;
 
 namespace Accounts;
 
-public class Startup: INomirunBootstrapable
+public class Startup : NomirunModuleStartup
 {
-    public Startup(IConfiguration configuration)
+    public Startup(IConfiguration configuration) : base(configuration)
+    { }
+
+    protected override void RegisterModuleServices(IServiceCollection services)
     {
-        Configuration = configuration;
-    }
-
-    private IConfiguration Configuration { get; }
-
-    public void ConfigureServices(IServiceCollection services)
-    {
-        //Add customer service registration
-
-        //Registration of Nomirun HTTP Client
-        services.AddScoped<IHttpClientService, HttpClientService>();
-
-        //Register Swagger documentation
-        services.ConfigureSwaggerDocs();
-
         services.AddTransient<IRequestHandler<GetAccountDataRequest, AccountDataResponse>, GetAccountDataHandler>();
     }
 }

@@ -16,6 +16,7 @@ public class AccountsController : NomirunApiController
     }
 
     [HttpGet("accounts/{accountId}")]
+    [ProducesResponseType(typeof(Account), 200)]
     public async Task<IActionResult> GetAccount([FromRoute] long accountId)
     {
         return Ok(new Account
