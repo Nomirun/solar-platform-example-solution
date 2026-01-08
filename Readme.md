@@ -246,7 +246,7 @@ nomi cluster new --cluster-name SolarPlatformLinux
 nomi cluster add-host --cluster-name SolarPlatformLinux --host-name AccountAndSolarServiceLinux --modules "Accounts@1.0.0;SolarInverters@1.0.0" --host-framework net10.0 --host-platform linux-musl-x64
 nomi cluster add-host --cluster-name SolarPlatformLinux --host-name ReportingServiceLinux --modules "Reports@1.0.0" --host-framework net10.0 --host-platform linux-musl-x64
 nomi cluster configure -c SolarPlatformLinux --nuget-server-name "GitHub" -h Container
-nomi cluster generate --cluster-name SolarPlatformLinux -t DockerEnvFile
+nomi cluster generate --cluster-name SolarPlatformLinux -t DockerEnvConfigFiles
 nomi cluster start --cluster-name SolarPlatformLinux -t Container
 nomi cluster stop --cluster-name SolarPlatformLinux -t Container
 nomi cluster build --cluster-name SolarPlatformLinux -t Container --docker-image-tag v1 --generate-docker-compose
