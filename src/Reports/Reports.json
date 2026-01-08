@@ -1,7 +1,8 @@
 {
-  "Nomirun.Module": {
+  "Nomirun": {
+    "Module": {
       "Reports": {
-      
       }
+    }
   }
 }

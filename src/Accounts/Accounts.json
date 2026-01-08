@@ -1,7 +1,9 @@
 {
-  "Nomirun.Module": {
+  "Nomirun": {
+    "Module": {
       "Accounts": {
-      
+        "Biba": "Leze"
       }
+    }
   }
 }

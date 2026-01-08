@@ -19,9 +19,9 @@
     <UserSecretsId>6645d052-dca0-4e8f-80d3-e46d3c68a29a</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="Nomirun.Sdk" Version="1.0.139" />
-      <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.36" />
-    <PackageReference Include="SolarPlatformCommon" Version="1.0.12" />
+      <PackageReference Include="Nomirun.Sdk" Version="1.0.140" />
+      <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.37" />
+    <PackageReference Include="SolarPlatformCommon" Version="1.0.15" />
     <PackageReference Include="Asp.Versioning.Abstractions" Version="8.1.0" />
     <PackageReference Include="Asp.Versioning.Http" Version="8.1.1" />
     <PackageReference Include="Google.Protobuf" Version="3.33.2" />
@@ -39,7 +39,7 @@
     </None>
   </ItemGroup>
   <Target Name="RunDebugger" Condition="'$(Configuration)'=='Debug'" AfterTargets="Build">
-    <Exec Command="nomirun module debug --module-output $(MSBuildProjectDirectory)\$(OutputPath) --module-name Accounts --module-id 3f792d02-a68d-4fff-b979-81c95e6dccdf --host-framework $(TargetFramework) -v false" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" ConsoleToMsBuild="true">
+    <Exec Command="nomirun module debug --module-output $(MSBuildProjectDirectory)\$(OutputPath) --module-name Accounts --module-id 3f792d02-a68d-4fff-b979-81c95e6dccdf --host-framework $(TargetFramework)" StdOutEncoding="UTF-8" StdErrEncoding="UTF-8" ConsoleToMsBuild="true">
       <Output TaskParameter="ConsoleOutput" PropertyName="Result" />
     </Exec>
   </Target>
