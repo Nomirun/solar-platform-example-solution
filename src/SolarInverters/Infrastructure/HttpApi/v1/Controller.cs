@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Nomirun.Sdk.Abstractions.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,6 +17,7 @@ public class SolarInvertersController : NomirunApiController
         _logger = logger;
     }
 
+    [Authorize]
     [HttpGet("solarInverters/{solarInverterId:long}/status")]
     public async Task<IActionResult> GetSolarInverterStatus([FromRoute] long solarInverterId)
     {
@@ -30,7 +32,8 @@ public class SolarInvertersController : NomirunApiController
             Status = "Connected"
         });
     }
-    
+
+    [Authorize]
     [HttpPost("solarInverters/{solarInverterId:long}/reading")]
     public async Task<IActionResult> SolarInvertersDemoAction([FromRoute] long solarInverterId, [FromBody] SolarInverterReading solarInverterReading)
     {

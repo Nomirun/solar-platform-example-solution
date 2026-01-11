@@ -59,9 +59,18 @@ clusters:
     - name: SolarInverters
       version: 
     extensions:
-    - name: Nomirun.Host.OpenTelemetry
-      version: 1.0.0
-      hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB43
+      - name: Nomirun.Host.OpenTelemetry
+        version: 1.0.2
+        hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB4686D0C273F7A8C721
+      - name: Nomirun.Host.Configuration.Azure.AppConfig
+        version: 1.0.1
+        hash: 466BC299145FBE10859F103014728BF50E12AE68A81660B72D0D93EC71E2270BAD7220BDA25FE7027AFE17E2E2AA78C131DF6465EF0AA858866E8B4882D6CE0F
+      - name: Nomirun.Host.Configuration.Azure.KeyVault
+        version: 1.0.1
+        hash: 653AB2FBAC6A3D7D2D245CFB7B6D5F85399599561D8F5B285C020F8D549B67698EC3AB7C724D584A316AE6E82150D02731630AFCB36432FEF8B0868DAB4799B5
+      - name: Nomirun.Host.Authentication.JwtBearer
+        version: 1.0.0
+        hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB4686D0C273F7A8C721
     configuration:
       caching:
         type: Memory
@@ -110,9 +119,15 @@ clusters:
     - name: Accounts
       version: 
     extensions:
-    - name: Nomirun.Host.OpenTelemetry
-      version: 1.0.0
-      hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB43
+      - name: Nomirun.Host.OpenTelemetry
+        version: 1.0.2
+        hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB4686D0C273F7A8C721
+      - name: Nomirun.Host.Configuration.Azure.AppConfig
+        version: 1.0.1
+        hash: 466BC299145FBE10859F103014728BF50E12AE68A81660B72D0D93EC71E2270BAD7220BDA25FE7027AFE17E2E2AA78C131DF6465EF0AA858866E8B4882D6CE0F
+      - name: Nomirun.Host.Configuration.Azure.KeyVault
+        version: 1.0.1
+        hash: 653AB2FBAC6A3D7D2D245CFB7B6D5F85399599561D8F5B285C020F8D549B67698EC3AB7C724D584A316AE6E82150D02731630AFCB36432FEF8B0868DAB4799B5
     configuration:
       caching:
         enabled: true
@@ -162,9 +177,15 @@ clusters:
     - name: Reports
       version: 
     extensions:
-    - name: Nomirun.Host.OpenTelemetry
-      version: 1.0.0
-      hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB43
+      - name: Nomirun.Host.OpenTelemetry
+        version: 1.0.2
+        hash: 58E4E33FB1943B51FBC4A346A24012104AA92B3F2F738F8B9EF83DC6A50343389D315BFB8F51F6CB6DDAB0F13BBFE87CFFD86A4F26D0FB4686D0C273F7A8C721
+      - name: Nomirun.Host.Configuration.Azure.AppConfig
+        version: 1.0.1
+        hash: 466BC299145FBE10859F103014728BF50E12AE68A81660B72D0D93EC71E2270BAD7220BDA25FE7027AFE17E2E2AA78C131DF6465EF0AA858866E8B4882D6CE0F
+      - name: Nomirun.Host.Configuration.Azure.KeyVault
+        version: 1.0.1
+        hash: 653AB2FBAC6A3D7D2D245CFB7B6D5F85399599561D8F5B285C020F8D549B67698EC3AB7C724D584A316AE6E82150D02731630AFCB36432FEF8B0868DAB4799B5
     configuration:
       caching:
         enabled: true
@@ -196,6 +217,14 @@ clusters:
         - endpoint: Global
           limit: 250
           periodInSeconds: 5
+      configurationStores:
+        azureKeyVault:
+          name: ''
+          managedIdentityId: ''
+        azureAppConfig:
+          name: ''
+          managedIdentityId: ''
+          label: ''
 ```
 
 Now you can open the solution in your IDE / code editor and build the code.

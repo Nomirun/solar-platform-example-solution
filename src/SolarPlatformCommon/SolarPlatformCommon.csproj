@@ -21,6 +21,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.37" />
+      <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.38" />
     </ItemGroup>
 </Project>

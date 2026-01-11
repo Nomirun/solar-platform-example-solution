@@ -1,4 +1,5 @@
 using Accounts.Models;
+using Microsoft.AspNetCore.Authorization;
 using Nomirun.Sdk.Abstractions.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
