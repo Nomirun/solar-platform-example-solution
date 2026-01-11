@@ -25,22 +25,24 @@ public class ReportsController : NomirunApiController
         var monthlyReport = new MonthlyReport { Title = "Monthly report september 2025" };
 
         var accountDetails =
-            await _mediate.Send<GetAccountDataRequest, AccountDataResponse>(
+            _mediate.Send<GetAccountDataRequest, AccountDataResponse>(
                 new GetAccountDataRequest
                 {
                     AccountId = 1
                 });
 
         var solarInverterData =
-            await _mediate.Send<GetSolarInverterMonthlyPowerReportRequest, SolarInvereterMonthyDataResponse>(
+            _mediate.Send<GetSolarInverterMonthlyPowerReportRequest, SolarInvereterMonthyDataResponse>(
                 new GetSolarInverterMonthlyPowerReportRequest
                 {
-                    SolarInverterId = accountDetails.SolarInverterIds.FirstOrDefault(), Month = 9, Year = 2025
+                    SolarInverterId = 100, Month = 9, Year = 2025
                 });
 
-        monthlyReport.MonthlyPowerKwh = solarInverterData.MonthlyPowerKw;
-        monthlyReport.SolarInverterId = solarInverterData.SolarInverterId;
-        monthlyReport.OwnerName = $"{accountDetails.FirstName} {accountDetails.LastName}";
+        await Task.WhenAll(solarInverterData, accountDetails);
+
+        monthlyReport.MonthlyPowerKwh = solarInverterData.Result.MonthlyPowerKw;
+        monthlyReport.SolarInverterId = solarInverterData.Result.SolarInverterId;
+        monthlyReport.OwnerName = $"{accountDetails.Result.FirstName} {accountDetails.Result.LastName}";
 
         return Ok(monthlyReport);
     }
