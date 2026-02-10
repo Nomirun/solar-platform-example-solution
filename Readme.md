@@ -288,10 +288,6 @@ nomi cluster configure -c SolarPlatformLinux --nuget-server-name "GitHub" -h Sta
 nomi cluster build --cluster-name SolarPlatformLinux -t Standalone -o c:\nomirun
 ```
 
-## 4.5. Generate Swagger controller attributes with AI
+## 4.5. Generate Swagger controller attributes with AI Agent
 
-```powershell
-nomi generate swagger -m Accounts
-nomi generate swagger -m Reports
-nomi generate swagger -m SolarInverters
-```
+Read our documentation [here](https://nomirun.com/docs/getting-started/ai-agent-skills).

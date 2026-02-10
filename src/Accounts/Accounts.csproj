@@ -19,13 +19,13 @@
     <UserSecretsId>6645d052-dca0-4e8f-80d3-e46d3c68a29a</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="Nomirun.Sdk" Version="1.0.141" />
+      <PackageReference Include="Nomirun.Sdk" Version="1.0.142" />
       <PackageReference Include="Nomirun.Sdk.Abstractions" Version="1.0.38" />
     <PackageReference Include="SolarPlatformCommon" Version="1.0.16" />
     <PackageReference Include="Asp.Versioning.Abstractions" Version="8.1.0" />
     <PackageReference Include="Asp.Versioning.Http" Version="8.1.1" />
-    <PackageReference Include="Google.Protobuf" Version="3.33.2" />
-    <PackageReference Include="Grpc.Tools" Version="2.76.0">
+    <PackageReference Include="Google.Protobuf" Version="3.33.5" />
+    <PackageReference Include="Grpc.Tools" Version="2.78.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
